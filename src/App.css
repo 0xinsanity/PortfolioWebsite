@@ -1,24 +1,56 @@
-.App {
+
+@font-face {
+    font-family: 'brandon_grotesquebold';
+    src: url('brandon_bld.woff2') format('woff2'),
+         url('brandon_bld.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'brandon_grotesque_regularRg';
+    src: url('brandon_reg.woff2') format('woff2'),
+         url('brandon_reg.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+.navigation-bar {
+  top: 0;
+  width: '100%';
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #231f20;
+}
+
+.top-bar {
   text-align: center;
+  margin-right: 40px;
 }
 
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 80px;
+.item {
+    float: right;
+    display: block;
+    color: white;
+    text-align: center;
+    padding-left: 13px;
+    padding-right: 13px;
+    padding-top: 12px;
+    padding-bottom: 6px;
+    text-decoration: none;
+    font-family: 'brandon_grotesque_regularRg';
+    font-size: 13pt;
 }
 
-.App-header {
-  background-color: #222;
-  height: 150px;
-  padding: 20px;
-  color: white;
-}
-
-.App-intro {
-  font-size: large;
-}
-
-@keyframes App-logo-spin {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
+.title {
+  float: left;
+  font-family: 'brandon_grotesquebold';
+  font-size: 20.73pt;
+  padding-top: 4px;
+  padding-bottom: 1px;
+  margin-bottom: 8px;
 }
