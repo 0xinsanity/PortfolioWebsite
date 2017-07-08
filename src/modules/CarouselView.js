@@ -86,7 +86,6 @@ class SamplePrevArrow extends React.Component {
     }
 
     render() {
-        this.props.onClick = this.onClick;
         return (
         <div
             className={this.props.className}

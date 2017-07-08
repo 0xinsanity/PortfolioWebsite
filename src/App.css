@@ -17,8 +17,23 @@
 
 }
 
+@font-face {
+    font-family: 'apercu-mono';
+    src: url('./fonts/apercu-mono.ttf') format('ttf');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
 .navigation-bar {
   top: 0;
+}
+
+.footer {
+  bottom: 0;
+}
+
+.navigation-bar, footer {
   width: '100%';
   list-style-type: none;
   margin: 0;
@@ -30,6 +45,10 @@
 .top-bar {
   text-align: center;
   margin-right: 40px;
+}
+
+.bottom-bar {
+  margin-top: 40px;
 }
 
 .item {
@@ -53,6 +72,11 @@
   padding-top: 4px;
   padding-bottom: 1px;
   margin-bottom: 8px;
+}
+
+.copyright {
+  font-family: 'apercu-mono';
+  color: white;
 }
 
 .overlay {
