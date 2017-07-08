@@ -18,25 +18,27 @@ export class CarouselView extends React.Component {
     constructor(props) {
         super(props);
         this.state = {current: 0};
-        this.onClickNext = this.onClickNext.bind(this);
-        this.onClickPrevious = this.onClickPrevious.bind(this);
+        this.prevHandler = this.prevHandler.bind(this);
+        this.nextHandler = this.nextHandler.bind(this);
     }
 
-    onClickNext() {
-        let current = this.state.current;
-        if (current == 2) {
-            this.setState({current: 0});
-        } else {
-            this.setState({current: current+1});
-        }
-    }
-
-    onClickPrevious() {
+    prevHandler(e) {
         let current = this.state.current;
         if (current == 0) {
             this.setState({current: 2});
         } else {
             this.setState({current: current-1});
+        }
+        //this.slickPrevious();
+        alert(current);
+    }
+
+    nextHandler(e) {
+        let current = this.state.current;
+        if (current == 2) {
+            this.setState({current: 0});
+        } else {
+            this.setState({current: current+1});
         }
     }
 
@@ -51,8 +53,7 @@ export class CarouselView extends React.Component {
             arrows: true,
             center_padding: true,
             draggable: false,
-            nextArrow: <SampleNextArrow onClick={this.onClickNext}/>,
-            prevArrow: <SamplePrevArrow onClick={this.onClickPrevious}/>
+            prevArrow: <SamplePrevArrow handler={this.prevHandler}/>
         };
         return (
             <div>
@@ -67,42 +68,38 @@ export class CarouselView extends React.Component {
             </div>
             </div>
         );
+
     }
 }
 
-function SampleNextArrow(props) {
 
-    const { className, style, onClick } = props
+class SamplePrevArrow extends React.Component {
 
-    return (
+    constructor(props) {
+        super(props);
+        this.click = this.click.bind(this);
+    }
+
+    click() {
+        this.props.onClick;
+        this.props.handler;
+    }
+
+    render() {
+        this.props.onClick = this.onClick;
+        return (
         <div
-            className={className}
+            className={this.props.className}
             style={{
-                ...style, display: 'block',
+                ...this.props.style, display: 'block',
                 opacity: '.8',
             }}
-            onClick={onClick}
+            onClick={this.click}
         ></div>
     );
+    }
 }
 
-function SamplePrevArrow(props) {
-
-    const { className, style, onClick } = props
-
-    return (
-        <div
-            className={className}
-            style={{
-                ...style,
-                display: 'block',
-                opacity: '.8'
-            }}
-            onClick={onClick}
-            onMouseOver={handleHover}
-        ></div>
-    );
-}
 
 function handleHover() {
     /*$(document).ready(function () {
