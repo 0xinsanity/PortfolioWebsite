@@ -1,8 +1,8 @@
 
 @font-face {
     font-family: 'brandon_grotesquebold';
-    src: url('brandon_bld.woff2') format('woff2'),
-         url('brandon_bld.woff') format('woff');
+    src: url('./fonts/brandon_bld.woff2') format('woff2'),
+         url('./fonts/brandon_bld.woff') format('woff');
     font-weight: normal;
     font-style: normal;
 
@@ -10,8 +10,8 @@
 
 @font-face {
     font-family: 'brandon_grotesque_regularRg';
-    src: url('brandon_reg.woff2') format('woff2'),
-         url('brandon_reg.woff') format('woff');
+    src: url('./fonts/brandon_reg.woff2') format('woff2'),
+         url('./fonts/brandon_reg.woff') format('woff');
     font-weight: normal;
     font-style: normal;
 
@@ -53,4 +53,26 @@
   padding-top: 4px;
   padding-bottom: 1px;
   margin-bottom: 8px;
+}
+
+.overlay {
+  background-color: #231f20;
+}
+
+.image {
+  z-index: 0;
+}
+
+.information {
+  height: 150px;
+  width: 100%;
+  background-color: black;
+  opacity: .5;
+  z-index: 2;
+  margin-top: -196px;
+}
+
+.artName {
+  background-color: red;
+  color: white;
 }
